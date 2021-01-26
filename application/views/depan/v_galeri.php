@@ -32,9 +32,9 @@
                     <div id="gallery-content">
                         <div id="gallery-content-center">
                             <?php foreach ($all_galeri->result() as $row) : ?>
-                                <a href="<?php echo base_url() . 'assets/images/' . $row->galeri_gambar; ?>"
+                                <a href="<?php echo base_url() . 'assets/images/galeri/' . $row->galeri_gambar; ?>"
                                    class="image-link2">
-                                    <img src="<?php echo base_url() . 'assets/images/' . $row->galeri_gambar; ?>"
+                                    <img src="<?php echo base_url() . 'assets/images/galeri/' . $row->galeri_gambar; ?>"
                                          class="all img-fluid" alt="#"/>
                                 </a>
                             <?php endforeach; ?>

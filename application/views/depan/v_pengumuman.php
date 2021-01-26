@@ -32,14 +32,14 @@
                     <?php foreach ($data->result() as $row): ?>
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-6 col-sm-12 col-lg-6">
                                     <div class="event-date">
                                         <h4><?php echo date("d", strtotime($row->pengumuman_tanggal)); ?></h4>
                                         <span><?php echo date("M Y", strtotime($row->pengumuman_tanggal)); ?></span>
                                     </div>
                                     <span class="event-time"><?php echo date("H:i", strtotime($row->pengumuman_tanggal)) . ' WIB'; ?></span>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-6 col-sm-12 col-lg-6">
                                     <div class="event-heading">
                                         <h3><?php echo $row->pengumuman_judul; ?></h3>
                                         <p><?php echo $row->pengumuman_deskripsi; ?></p>

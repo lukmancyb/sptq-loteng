@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,6 +9,7 @@
     <link rel="shorcut icon" href="<?php echo base_url() . 'theme/images/logo_lptq.png' ?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url() . 'theme/css/bootstrap.min.css' ?>">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
     <!-- Font Awesome -->
@@ -18,6 +20,7 @@
     <link rel="stylesheet" href="<?php echo base_url() . 'theme/css/slick.css' ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'theme/css/slick-theme.css' ?>">
     <link rel="stylesheet" href="<?php echo base_url() . 'theme/css/owl.carousel.min.css' ?>">
+
     <!-- Main CSS -->
     <link href="<?php echo base_url() . 'theme/css/style.css' ?>" rel="stylesheet">
     <?php
