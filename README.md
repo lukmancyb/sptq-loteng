@@ -12,16 +12,20 @@ Berikut merupakan source code website untuk profil perusahaan atau website priba
 -   Import db_lptq.sql yang ada pada folder database
 -   Kemudian Jalankan Aplikasinya.
 
+
 # Informasi Akun
 -   Disini terdapat dua akun yaitu Admin dan Author
 -   Untuk `admin` masukan username : `admin` dan password : `admin`
 -   Untuk `author` masukan username : `author` dan password : `author`
+
 
 #  Informasi Fitur yang di ubah
 -   Modul Agenda, Modul Prestasi
 -   Beberapa Halaman Dinamis
 -   Slider menjadi dinamis
 -   dan lain lain
+
+
 
 # Thanks
 
