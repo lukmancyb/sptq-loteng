@@ -1,4 +1,4 @@
-# SPTQ loteng
+# SPTQ Loteng
 
 Bismillahirohmanirohim . .
 
@@ -12,10 +12,12 @@ Berikut merupakan source code website untuk profil perusahaan atau website priba
 -   Import db_lptq.sql yang ada pada folder database
 -   Kemudian Jalankan Aplikasinya.
 
+
 # Informasi Akun
 -   Disini terdapat dua akun yaitu Admin dan Author
 -   Untuk `admin` masukan username : `admin` dan password : `admin`
 -   Untuk `author` masukan username : `author` dan password : `author`
+
 
 #  Informasi Fitur yang di ubah
 -   Modul Agenda, Modul Prestasi
@@ -23,14 +25,12 @@ Berikut merupakan source code website untuk profil perusahaan atau website priba
 -   Slider menjadi dinamis
 -   dan lain lain
 
+
+
 # Thanks
 
 Terimakasih untuk <https://mfikri.com> atas Source Code yang diberikan. Sangat Bermanfaat, Semoga menjadi amal baik untuk beliau.
-Silahkan unduh Source Code sumber yang ada di link ini : `Source Code <https://mfikri.com/sources/mschool-v2>`
-
-
-# --_--
-
+Silahkan unduh Source Code sumber yang ada di link ini :  <https://mfikri.com/sources/mschool-v2>
 
 
 
