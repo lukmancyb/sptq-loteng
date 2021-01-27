@@ -34,6 +34,7 @@ class Page extends MY_Controller
     public function simpan_page()
     {
         $post = $this->input->post();
+        // var_dump($post['is_active']); die;
         $judul = $post['menu'];
         $string = preg_replace('/[^a-zA-Z0-9 \&%|{.}=,?!*()"-_+$@;<>\']/', '', $judul);
         $trim = trim($string);
@@ -43,7 +44,8 @@ class Page extends MY_Controller
             'menu' => $post['menu'],
             'content' => $post['content'],
             'slug' => $slug,
-            'created_at' => date('Y:m:d h:m:s')
+            'created_at' => date('Y:m:d h:m:s'),
+            'is_active' => $post['is_active']
         );
         $query = $this->m_pages->insert($data);
         if ($query) {
@@ -67,7 +69,7 @@ class Page extends MY_Controller
             'menu' => $post['menu'],
             'content' => $post['content'],
             'slug' => $slug,
-            'is_active' => 1
+            'is_active' => $post['is_active']
         );
         $query = $this->m_pages->update($post['id'], $data);
         if ($query) {

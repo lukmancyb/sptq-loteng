@@ -175,7 +175,7 @@
                         <?php foreach ($populer->result() as $row) : ?>
                             <div class="blog-featured-img_block">
                                 <img width="35%"
-                                     src="<?php echo base_url() . 'assets/images/' . $row->tulisan_gambar; ?>"
+                                     src="<?php echo base_url() . 'assets/images/berita/' . $row->tulisan_gambar; ?>"
                                      class="img-fluid" alt="blog-featured-img">
                                 <h5>
                                     <a href="<?php echo site_url('artikel/' . $row->tulisan_slug); ?>"><?php echo limit_words($row->tulisan_judul, 3) . '...'; ?></a>

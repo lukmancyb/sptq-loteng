@@ -243,6 +243,7 @@
                                         <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
                                         <div class="col-sm-7">
 											<input type="hidden" name="kode" value="<?php echo $pengguna_id;?>"/>
+											<input type="hidden" name="pengguna_photo" value="<?php echo $pengguna_photo;?>"/>
                                             <input type="text" name="xnama" class="form-control" id="inputUserName" value="<?php echo $pengguna_nama;?>" placeholder="Nama Lengkap" required>
                                         </div>
                                     </div>

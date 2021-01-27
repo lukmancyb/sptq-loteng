@@ -11,7 +11,7 @@ $jum_pesan = $query->num_rows();
 
         <ul class="sidebar-menu">
             <li class="header">Menu Utama</li>
-            <li class="active">
+            <li>
                 <a href="<?php echo base_url() . 'admin/dashboard' ?>">
                     <i class="fa fa-home"></i> <span>Dashboard</span>
                     <span class="pull-right-container">
@@ -73,7 +73,7 @@ $jum_pesan = $query->num_rows();
                 </a>
             </li>
             <li>
-                <a href="<?php echo base_url() . 'admin/siswa' ?>"><i class="fa fa-users"></i> Data Prestasi</a></li>
+                <a href="<?php echo base_url() . 'admin/prestasi' ?>"><i class="fa fa-users"></i> Data Prestasi</a></li>
             </li>
 
             <li class="treeview">
@@ -90,7 +90,7 @@ $jum_pesan = $query->num_rows();
                     </li>
                 </ul>
             </li>
-
+            <?php if ($this->session->userdata('akses') === '1'): ?>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-clone"></i>
@@ -105,6 +105,7 @@ $jum_pesan = $query->num_rows();
                 </ul>
             </li>
             <li>
+            <?php endif;?>
 
 
 

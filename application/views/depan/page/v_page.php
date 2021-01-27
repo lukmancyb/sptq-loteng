@@ -10,7 +10,8 @@
         <div class="row">
 
             <div class="col-md-12">
-                    <?= $data->content;?>
+
+                    <?= $data->content ? $data->content : "<i>Konten Masih Belum Tersedia</i>";?>
             </div>
 
         </div>

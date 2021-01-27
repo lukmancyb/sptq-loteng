@@ -18,6 +18,7 @@ class Login extends MY_Controller{
         $password=strip_tags(str_replace("'", "", $this->input->post('password')));
         $u=$username;
         $p=$password;
+        // var_dump($p); die;
         $cadmin=$this->m_login->cekadmin($u,$p);
         echo json_encode($cadmin);
         if($cadmin->num_rows() > 0){

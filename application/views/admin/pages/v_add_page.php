@@ -2,6 +2,7 @@
 <!--  -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,150 +35,166 @@
 
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
 
-    <?php
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <?php
     $this->load->view('admin/v_header');
     ?>
 
-    <!-- Left side column. contains the logo and sidebar -->
-    <?php $this->load->view('layouts/partials/admin/sidebar'); ?>
+        <!-- Left side column. contains the logo and sidebar -->
+        <?php $this->load->view('layouts/partials/admin/sidebar'); ?>
 
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Page
-                <small></small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Page</a></li>
-                <li class="active">Add Page</li>
-            </ol>
-        </section>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Page
+                    <small></small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Page</a></li>
+                    <li class="active">Add Page</li>
+                </ol>
+            </section>
 
-        <!-- Main content -->
-        <section class="content">
+            <!-- Main content -->
+            <section class="content">
 
-            <!-- SELECT2 EXAMPLE -->
-            <div class="row col-lg-8">
+                <!-- SELECT2 EXAMPLE -->
+                <div class="row col-lg-8">
 
-                <div class="box box-default col-lg-12">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Post Page</h3>
-                    </div>
+                    <div class="box box-default col-lg-12">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Post Page</h3>
+                        </div>
 
-                    <form action="<?php echo base_url() . 'admin/page/simpan_page' ?>" method="post"
-                          enctype="multipart/form-data">
+                        <form action="<?php echo base_url() . 'admin/page/simpan_page' ?>" method="post"
+                            enctype="multipart/form-data">
 
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <input type="text" name="menu" class="form-control"
-                                           placeholder="Nama menu" required/>
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-flat pull-right"><span
-                                                    class="fa fa-pencil"></span> Publish
-                                        </button>
-                                        <!-- /.form-group -->
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <input type="text" name="menu" class="form-control" placeholder="Nama menu"
+                                            required />
                                     </div>
                                     <!-- /.col -->
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-flat pull-right"><span
+                                                    class="fa fa-pencil"></span> Publish
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- /.row -->
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="is_active" id="optionsRadios1"
+                                                        value="1" checked="">
+                                                    Aktif
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="is_active" id="optionsRadios2"
+                                                        value="0"> Tidak Aktif
+                                                   
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <div class="box box-danger">
+                            <div class="box-header">
+                                <h3 class="box-title">Konten</h3>
+                            </div>
+                            <div class="box-body">
+                                <textarea id="ckeditor" name="content" required></textarea>
                             </div>
                             <!-- /.box-body -->
-
                         </div>
-                </div>
-                <!-- /.box -->
-            </div>
+                        <!-- /.box -->
 
-            <div class="row">
-                <div class="col-md-8">
-
-                    <div class="box box-danger">
-                        <div class="box-header">
-                            <h3 class="box-title">Konten</h3>
-                        </div>
-                        <div class="box-body">
-                            <textarea id="ckeditor" name="content" required></textarea>
-                        </div>
-                        <!-- /.box-body -->
                     </div>
-                    <!-- /.box -->
+                    <!-- /.col (left) -->
+                    <!-- /.row -->
 
-                </div>
-                <!-- /.col (left) -->
-                <!-- /.row -->
-
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 1.0
+            </section>
+            <!-- /.content -->
         </div>
-        <strong>Copyright &copy; 2017 <a href="http://mfikri.com">M Fikri Setiadi</a>.</strong> All rights reserved.
-    </footer>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0
+            </div>
+            <strong>Copyright &copy; 2017 <a href="http://mfikri.com">M Fikri Setiadi</a>.</strong> All rights reserved.
+        </footer>
 
-    <!-- Control Sidebar -->
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
+        <!-- Control Sidebar -->
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
-</div>
-<!-- ./wrapper -->
+    </div>
+    <!-- ./wrapper -->
 
-<!-- jQuery 2.2.3 -->
-<script src="<?php echo base_url() . 'assets/plugins/jQuery/jquery-2.2.3.min.js' ?>"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="<?php echo base_url() . 'assets/bootstrap/js/bootstrap.min.js' ?>"></script>
-<!-- Select2 -->
-<script src="<?php echo base_url() . 'assets/plugins/select2/select2.full.min.js' ?>"></script>
-<!-- InputMask -->
-<script src="<?php echo base_url() . 'assets/plugins/input-mask/jquery.inputmask.js' ?>"></script>
-<script src="<?php echo base_url() . 'assets/plugins/input-mask/jquery.inputmask.date.extensions.js' ?>"></script>
-<script src="<?php echo base_url() . 'assets/plugins/input-mask/jquery.inputmask.extensions.js' ?>"></script>
-<!-- date-range-picker -->
-<script src="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.js' ?>"></script>
-<!-- bootstrap datepicker -->
-<script src="<?php echo base_url() . 'assets/plugins/datepicker/bootstrap-datepicker.js' ?>"></script>
-<!-- bootstrap color picker -->
-<script src="<?php echo base_url() . 'assets/plugins/colorpicker/bootstrap-colorpicker.min.js' ?>"></script>
-<!-- bootstrap time picker -->
-<script src="<?php echo base_url() . 'assets/plugins/timepicker/bootstrap-timepicker.min.js' ?>"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="<?php echo base_url() . 'assets/plugins/slimScroll/jquery.slimscroll.min.js' ?>"></script>
-<!-- iCheck 1.0.1 -->
-<script src="<?php echo base_url() . 'assets/plugins/iCheck/icheck.min.js' ?>"></script>
-<!-- FastClick -->
-<script src="<?php echo base_url() . 'assets/plugins/fastclick/fastclick.js' ?>"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url() . 'assets/dist/js/app.min.js' ?>"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url() . 'assets/dist/js/demo.js' ?>"></script>
-<script src="<?php echo base_url() . 'assets/ckeditor/ckeditor.js' ?>"></script>
-<!-- Page script -->
+    <!-- jQuery 2.2.3 -->
+    <script src="<?php echo base_url() . 'assets/plugins/jQuery/jquery-2.2.3.min.js' ?>"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="<?php echo base_url() . 'assets/bootstrap/js/bootstrap.min.js' ?>"></script>
+    <!-- Select2 -->
+    <script src="<?php echo base_url() . 'assets/plugins/select2/select2.full.min.js' ?>"></script>
+    <!-- InputMask -->
+    <script src="<?php echo base_url() . 'assets/plugins/input-mask/jquery.inputmask.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/plugins/input-mask/jquery.inputmask.date.extensions.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/plugins/input-mask/jquery.inputmask.extensions.js' ?>"></script>
+    <!-- date-range-picker -->
+    <script src="<?php echo base_url() . 'assets/plugins/daterangepicker/daterangepicker.js' ?>"></script>
+    <!-- bootstrap datepicker -->
+    <script src="<?php echo base_url() . 'assets/plugins/datepicker/bootstrap-datepicker.js' ?>"></script>
+    <!-- bootstrap color picker -->
+    <script src="<?php echo base_url() . 'assets/plugins/colorpicker/bootstrap-colorpicker.min.js' ?>"></script>
+    <!-- bootstrap time picker -->
+    <script src="<?php echo base_url() . 'assets/plugins/timepicker/bootstrap-timepicker.min.js' ?>"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="<?php echo base_url() . 'assets/plugins/slimScroll/jquery.slimscroll.min.js' ?>"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="<?php echo base_url() . 'assets/plugins/iCheck/icheck.min.js' ?>"></script>
+    <!-- FastClick -->
+    <script src="<?php echo base_url() . 'assets/plugins/fastclick/fastclick.js' ?>"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo base_url() . 'assets/dist/js/app.min.js' ?>"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo base_url() . 'assets/dist/js/demo.js' ?>"></script>
+    <script src="<?php echo base_url() . 'assets/ckeditor/ckeditor.js' ?>"></script>
+    <!-- Page script -->
 
-<script>
-    $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
 
-        CKEDITOR.replace('ckeditor');
+            CKEDITOR.replace('ckeditor');
 
 
-    });
-</script>
+        });
+    </script>
 
 
 </body>
+
 </html>

@@ -94,6 +94,26 @@
                                 <!-- /.row -->
                             </div>
                             <!-- /.box-body -->
+                            <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="is_active" id="optionsRadios1"
+                                                        value="1" <?=  $page->is_active ?  'checked' : '';?> >
+                                                    Aktif
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="is_active" id="optionsRadios2"
+                                                        value="0"  <?=  !$page->is_active ?  'checked' : '';?> > Tidak Aktif
+                                                   
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                         </div>
                 </div>

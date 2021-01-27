@@ -43,7 +43,7 @@ class Pengguna extends MY_Controller{
 	                        $nama=$this->input->post('xnama');
 	                        $jenkel=$this->input->post('xjenkel');
 	                        $username=$this->input->post('xusername');
-	                        $password=$this->input->post('xpassword');
+	                        $password= $this->input->post('xpassword');
                             $konfirm_password=$this->input->post('xpassword2');
                             $email=$this->input->post('xemail');
                             $nohp=$this->input->post('xkontak');
@@ -52,7 +52,7 @@ class Pengguna extends MY_Controller{
      							echo $this->session->set_flashdata('msg','error');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->simpan_pengguna($nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+	               				$this->m_pengguna->simpan_pengguna($nama,$jenkel,$username,md5($password),$email,$nohp,$level,$gambar);
 	                    		echo $this->session->set_flashdata('msg','success');
 	               				redirect('admin/pengguna');
 	               				
@@ -76,7 +76,7 @@ class Pengguna extends MY_Controller{
      					echo $this->session->set_flashdata('msg','error');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$jenkel,$username,$password,$email,$nohp,$level);
+	               		$this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$jenkel,$username,md5($password),$email,$nohp,$level);
 	                    echo $this->session->set_flashdata('msg','success');
 	               		redirect('admin/pengguna');
 	               	}
@@ -98,13 +98,13 @@ class Pengguna extends MY_Controller{
 	                        $gbr = $this->upload->data();
 	                        //Compress Image
 	                        $config['image_library']='gd2';
-	                        $config['source_image']='./assets/images/pengguna'.$gbr['file_name'];
+	                        $config['source_image']='./assets/images/pengguna/'.$gbr['file_name'];
 	                        $config['create_thumb']= FALSE;
 	                        $config['maintain_ratio']= FALSE;
 	                        $config['quality']= '60%';
 	                        $config['width']= 300;
 	                        $config['height']= 300;
-	                        $config['new_image']= './assets/images/pengguna'.$gbr['file_name'];
+	                        $config['new_image']= './assets/images/pengguna/'.$gbr['file_name'];
 	                        $this->load->library('image_lib', $config);
 	                        $this->image_lib->resize();
 
@@ -118,17 +118,36 @@ class Pengguna extends MY_Controller{
                     		$email=$this->input->post('xemail');
                     		$nohp=$this->input->post('xkontak');
 							$level=$this->input->post('xlevel');
+							$old_gambar=$this->input->post('pengguna_photo');
+
                             if (empty($password) && empty($konfirm_password)) {
-                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
-	                    		echo $this->session->set_flashdata('msg','info');
+                            	$query = $this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+								if($query){
+									$path='./assets/images/pengguna/'.$old_gambar;
+									unlink($path);
+									echo $this->session->set_flashdata('msg','info');
+									redirect('admin/pengguna');
+
+								}else{
+									echo $this->session->set_flashdata('msg','error');
 	               				redirect('admin/pengguna');
+								}
      						}elseif ($password <> $konfirm_password) {
      							echo $this->session->set_flashdata('msg','error');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->update_pengguna($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
-	                    		echo $this->session->set_flashdata('msg','info');
-	               				redirect('admin/pengguna');
+							// var_dump($old_img);die;
+	               				$query = $this->m_pengguna->update_pengguna($kode,$nama,$jenkel,$username,md5($password),$email,$nohp,$level,$gambar);
+								if($query){
+									$path='./assets/images/pengguna/'.$old_gambar;
+									unlink($path);
+									echo $this->session->set_flashdata('msg','info');
+									redirect('admin/pengguna');
+
+								}else{
+									echo $this->session->set_flashdata('msg','error');
+	               					redirect('admin/pengguna');
+								}
 	               			}
 	                    
 	                }else{
@@ -154,8 +173,8 @@ class Pengguna extends MY_Controller{
      					echo $this->session->set_flashdata('msg','error');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level);
-	                    echo $this->session->set_flashdata('msg','warning');
+	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$jenkel,$username,md5($password),$email,$nohp,$level);
+	                    echo $this->session->set_flashdata('msg','info');
 	               		redirect('admin/pengguna');
 	               	}
 	            } 
@@ -167,7 +186,7 @@ class Pengguna extends MY_Controller{
 		$data=$this->m_pengguna->get_pengguna_login($kode);
 		$q=$data->row_array();
 		$p=$q['pengguna_photo'];
-		$path=base_url().'assets/images/'.$p;
+		$path=base_url().'assets/images/pengguna/'.$p;
 		delete_files($path);
 		$this->m_pengguna->hapus_pengguna($kode);
 	    echo $this->session->set_flashdata('msg','success-hapus');
@@ -183,7 +202,7 @@ class Pengguna extends MY_Controller{
             $b=$a['pengguna_username'];
         }
         $pass=rand(123456,999999);
-        $this->m_pengguna->resetpass($id,$pass);
+        $this->m_pengguna->resetpass($id,md5($pass));
         echo $this->session->set_flashdata('msg','show-modal');
         echo $this->session->set_flashdata('uname',$b);
         echo $this->session->set_flashdata('upass',$pass);

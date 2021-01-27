@@ -2,12 +2,13 @@
 class Prestasi extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_siswa');
+		// $this->load->model('m_siswa');
+		$this->load->model('m_prestasi');
 		$this->load->model('m_pengunjung');
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$jum=$this->m_siswa->siswa();
+		$jum=$this->m_prestasi->get();
         $page=$this->uri->segment(3);
         if(!$page):
             $offset = 0;
@@ -15,7 +16,7 @@ class Prestasi extends CI_Controller{
             $offset = $page;
         endif;
         $limit=8;
-        $config['base_url'] = base_url() . 'siswa/index/';
+        $config['base_url'] = base_url() . 'prestasi/index/';
             $config['total_rows'] = $jum->num_rows();
             $config['per_page'] = $limit;
             $config['uri_segment'] = 3;
@@ -40,8 +41,9 @@ class Prestasi extends CI_Controller{
             $config['prev_link'] = '<< Prev';
             $this->pagination->initialize($config);
             $x['page'] =$this->pagination->create_links();
-						$x['data']=$this->m_siswa->siswa_perpage($offset,$limit);
-						$this->load->view('depan/v_prestasi',$x);
+			$x['data']=$this->m_prestasi->prestasi_perpage($offset,$limit);
+			// var_dump($x['data']->result()); die;
+			$this->load->view('depan/v_prestasi',$x);
 	}
 
 

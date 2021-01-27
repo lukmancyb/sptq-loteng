@@ -11,7 +11,7 @@ class Page extends CI_Controller{
 	public function detail($slug){
         $slug = htmlspecialchars($slug, ENT_QUOTES);
 
-        $data = $this->m_pages->get_where(array('slug' => $slug))->row();
+        $data = $this->m_pages->get_where(array('slug' => $slug,'is_active' => TRUE))->row();
 
         if ($data){
 //            var_dump($data);die;
