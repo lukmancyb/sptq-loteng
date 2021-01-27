@@ -7,7 +7,7 @@ class About extends CI_Controller{
 	}
 	function index(){
 		$x['tot_berita']=$this->db->get('tbl_tulisan')->num_rows();
-		$x['tot_prestasi']=$this->db->get('tbl_siswa')->num_rows();
+		$x['tot_prestasi']=$this->db->get('tbl_prestasi')->num_rows();
 		$x['tot_files']=$this->db->get('tbl_files')->num_rows();
 		$x['tot_agenda']=$this->db->get('tbl_agenda')->num_rows();
 		$this->load->view('depan/v_about',$x);
