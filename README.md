@@ -1,4 +1,4 @@
-# SPTQ loteng
+# SPTQ Loteng
 
 Bismillahirohmanirohim . .
 
