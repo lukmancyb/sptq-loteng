@@ -30,7 +30,7 @@ Berikut merupakan source code website untuk profil perusahaan atau website priba
 # Thanks
 
 Terimakasih untuk <https://mfikri.com> atas Source Code yang diberikan. Sangat Bermanfaat, Semoga menjadi amal baik untuk beliau.
-Silahkan unduh Source Code sumber yang ada di link ini : Source Code : <https://mfikri.com/sources/mschool-v2>
+Silahkan unduh Source Code sumber yang ada di link ini :  <https://mfikri.com/sources/mschool-v2>
 
 
 
