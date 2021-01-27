@@ -1,1 +1,3 @@
 # sptq-loteng
+
+Bismillahirohmanirohim . .
