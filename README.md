@@ -2,7 +2,7 @@
 
 Bismillahirohmanirohim . .
 
-Berikut merupakan source code website untuk profil perusahaan atau website pribadi, source code ini kami kembangkan untuk kebutuhan website SPTQ Lombok Tengah.
+Berikut merupakan source code website untuk profil perusahaan atau website pribadi, source code ini kami kembangkan untuk kebutuhan website LPTQ Lombok Tengah.
 
 
 
